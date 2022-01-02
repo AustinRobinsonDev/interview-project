@@ -1,6 +1,6 @@
 import useCapitalize from '../custom_hooks/useCapitalize';
 import PropTypes from 'prop-types';
-import profile from '../assets/profile.jpg';
+import profilePic from '../assets/profile.jpg';
 
 const UserDetails = (props) => {
     const { current, setCurrent, setIsCurrent } = props;
@@ -19,10 +19,10 @@ const UserDetails = (props) => {
         <main className='user-details'>
             <section className='detail-header'>
                 <div>
-                <h1 className='m-15'>Name: {user.name || user.first_name ? user.name || user.first_name : "No user name available"}</h1>
-                <h2 className='m-15 email'>Email: {user.email ? capEmail : "No email address for this user"}</h2>   
+                    <h1 className='m-15'>Name: {user.name || user.first_name ? user.name || user.first_name : "No user name available"}</h1>
+                    <h2 className='m-15 email'>Email: {user.email ? capEmail : "No email address for this user"}</h2>   
                 </div>
-                {(capEmail.length < 25) ? <img className='avatar' src={profile} alt="profile avatar" /> : <></>}           
+                {(capEmail.length < 25) ? <img className='avatar' src={profilePic} alt="profile avatar" /> : <></>}           
             </section>
             <hr />
             <section className='detail-header'>
