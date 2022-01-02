@@ -6,7 +6,7 @@ const UserDetails = (props) => {
     const { current, setCurrent, setIsCurrent } = props;
     const { user, address } = current;
     const { line_1, line_2, city, state } = address;
-    // zip: possible variable naming issue
+    // address.zip: possible variable naming issue
     // format address and emails
     let location = `${city}, ${state}, ${address.zip}`;
     let capEmail = useCapitalize(user.email);
