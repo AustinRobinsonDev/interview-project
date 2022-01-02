@@ -13,6 +13,9 @@ footer {
   max-width: 100vw;
   height: 2.5rem;
 }
+nav h2 {
+  align-self: flex-start;
+}
 /* utility classes */
 .center-text {
   text-align: center;
@@ -27,6 +30,7 @@ footer {
   font-size: 5rem;
 }
 .btn {
+  border-radius: .6rem;
   width: 10rem;
   height: 3rem;
   font-size: 1.2rem;
@@ -78,6 +82,7 @@ footer {
     margin-bottom: 1rem;
     position: sticky;
     top: 0;
+    z-index: 99;
 }
 .user-item { 
   background-color: hsl(180, 10%, 81%);
@@ -102,6 +107,7 @@ footer {
   height: 7rem;
   width: 7rem;
   align-self: flex-end;
+  z-index: 0;
 }
 .spinner {
   z-index: 9999;

@@ -18,9 +18,11 @@ const UserDetails = (props) => {
     return (
         <main className='user-details'>
             <section className='detail-header'>
-                <h1 className='m-15'>{user.name || user.first_name ? user.name || user.first_name : "No user name available"}</h1>
-                <h2 className='m-15 email'>{user.email ? `Email: ${capEmail}` : "No email address for this user"}</h2>   
-                {(capEmail.length < 22) ? <img className='avatar' src={profile} alt="profile avatar" /> : <></>}           
+                <div>
+                <h1 className='m-15'>Name: {user.name || user.first_name ? user.name || user.first_name : "No user name available"}</h1>
+                <h2 className='m-15 email'>Email: {user.email ? capEmail : "No email address for this user"}</h2>   
+                </div>
+                {(capEmail.length < 25) ? <img className='avatar' src={profile} alt="profile avatar" /> : <></>}           
             </section>
             <hr />
             <section className='detail-header'>
@@ -40,6 +42,10 @@ const UserDetails = (props) => {
 
 UserDetails.propTypes = {
     current: PropTypes.object.isRequired,
+    line_1: PropTypes.string,
+    line_2: PropTypes.string,
+    city: PropTypes.string,
+    state: PropTypes.string,
 }
 
 export default UserDetails
