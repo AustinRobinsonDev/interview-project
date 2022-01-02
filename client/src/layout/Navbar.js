@@ -1,8 +1,8 @@
 const Navbar = () => {
     return (
-        <nav className='navbar'>
+        <div className='navbar'>
             <h2>Users</h2>
-        </nav>
+        </div>
     )
 }
 

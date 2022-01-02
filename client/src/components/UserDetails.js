@@ -8,13 +8,19 @@ const UserDetails = (props) => {
     const { line_1, line_2, city, state } = address;
     // address.zip: possible variable naming issue
     // format address and emails
-    let location = `${city}, ${state}, ${address.zip}`;
+    let location = `${city}, ${state} ${address.zip}`;
     let capEmail = useCapitalize(user.email);
+    if (capEmail.length > 23 && window.innerWidth < 850) {
+        capEmail = capEmail.slice(0,22) + "..."
+    } else if (capEmail.length > 30 && window.innerWidth > 850) {
+        capEmail = capEmail.slice(0,40) + "..."
+    }
     // back button re-renders user list conditionally 
     const handleClick = () => {
         setIsCurrent(false);
         setCurrent({});
     }
+
     return (
         <main className='user-details'>
             <section className='detail-header'>
@@ -22,7 +28,7 @@ const UserDetails = (props) => {
                     <h1 className='m-15'>Name: {user.name || user.first_name ? user.name || user.first_name : "No user name available"}</h1>
                     <h2 className='m-15 email'>Email: {user.email ? capEmail : "No email address for this user"}</h2>   
                 </div>
-                {(capEmail.length < 25) ? <img className='avatar' src={profilePic} alt="profile avatar" /> : <></>}           
+                {(capEmail.length < 30) ? <img className='avatar' src={profilePic} alt="profile avatar" /> : <></>}           
             </section>
             <hr />
             <section className='detail-header'>
