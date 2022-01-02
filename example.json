@@ -1,0 +1,58 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "email": "alice@example.com",
+      "name": "Alice"
+    },
+    {
+      "id": "2",
+      "email": "bob@example.com",
+      "name": "Bob"
+    },
+    {
+      "id": "3",
+      "email": "charlie@example.com",
+      "first_name": "Charlie"
+    },
+    {
+      "id": "4",
+      "email": "dana@example.com",
+      "first_name": "Dana"
+    }
+  ],
+  "address": [
+    {
+      "id": "1",
+      "line_1": "123 Test Ave.",
+      "line_2": "Apt. 1111",
+      "city": "Montgomery",
+      "state": "AL",
+      "zip:": 36100
+    },
+    {
+      "id": "2",
+      "line_1": "123 Test Ave.",
+      "line_2": "Apt. 2222",
+      "city": "Montgomery",
+      "state": "AL",
+      "zip:": 36100
+    },
+    {
+      "id": "3",
+      "line_1": "9876 Example Blvd.",
+      "line_2": "",
+      "city": "Montgomery",
+      "state": "AL",
+      "zip:": 36100
+    },
+    {
+      "id": "4",
+      "line_1": "11235 Fibbonacci St.",
+      "line_2": "",
+      "city": "Montgomery",
+      "state": "AL",
+      "zip:": 36100
+    }
+  ]
+}
