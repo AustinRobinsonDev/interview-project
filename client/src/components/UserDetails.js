@@ -6,13 +6,13 @@ const UserDetails = (props) => {
     const { current, setCurrent, setIsCurrent } = props;
     const { user, address } = current;
     const { line_1, line_2, city, state } = address;
-    // address.zip: possible variable naming issue
+    // address.zip: possible key naming issue
     // format address and emails
     let location = `${city}, ${state} ${address.zip}`;
     let capEmail = useCapitalize(user.email);
-    if (capEmail.length > 23 && window.innerWidth < 850) {
+    if (capEmail.length > 22 && window.innerWidth < 850) {
         capEmail = capEmail.slice(0,22) + "..."
-    } else if (capEmail.length > 30 && window.innerWidth > 850) {
+    } else if (capEmail.length > 40 && window.innerWidth > 850) {
         capEmail = capEmail.slice(0,40) + "..."
     }
     // back button re-renders user list conditionally 
@@ -32,7 +32,9 @@ const UserDetails = (props) => {
             </section>
             <hr />
             <section className='detail-header'>
-                {!address ? <h3>Address Unavailable</h3> : 
+                {!address ? 
+                    <h3>Address Unavailable</h3> 
+                    : 
                     <article>
                         <h3 className='m-15'>Address:</h3>
                         <h4 className='m-15'>{line_1}</h4>

@@ -28,8 +28,6 @@ const Users = () => {
     }
 
     useEffect(() => {
-        getUsers();
-        getAddresses();
         getAllUsers();
         getAllAddresses();
         if (isCurrent) {
@@ -45,8 +43,10 @@ const Users = () => {
         return (
             <main className='user-list'>
                 <h1 className='center-text m-heading'>{isCurrent ? "User Details" : "All Users"}</h1>
-                    {isCurrent ? <UserDetails current={current} setCurrent={setCurrent} setIsCurrent={setIsCurrent} /> 
-                    : users.map((person => {
+                    {isCurrent ? 
+                    <UserDetails current={current} setCurrent={setCurrent} setIsCurrent={setIsCurrent} /> 
+                    : 
+                    users.map((person => {
                         const { id, name, first_name, email } = person;
                         return <UserItem 
                         key={id} 
