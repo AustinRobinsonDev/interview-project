@@ -6,7 +6,7 @@ export const getUsers = async () => {
         const response = await api.get("/user");
         return response.data;
     } catch (err) {
-        console.log(err.response)
+        console.log(err.response);
     }
 }
 
@@ -15,6 +15,6 @@ export const getAddresses = async () => {
         const response = await api.get("/address");
         return response.data; 
     } catch (err) {
-        console.log(err.response)
+        console.log(err.response);
     }
 }

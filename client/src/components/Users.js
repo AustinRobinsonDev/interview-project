@@ -7,7 +7,6 @@ const Users = () => {
     const [users, setUsers] = useState([]);
     const [addresses, setAddresses] = useState([]);
     const [isCurrent, setIsCurrent] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
     const [current, setCurrent] = useState({});
     // fetch data and set state
     const getAllUsers = async () => {
@@ -38,7 +37,6 @@ const Users = () => {
         } else {
             document.title = "Users";
         }
-        setIsLoading(false);
     }, [isCurrent, current, users])
     
     if (!users) {
@@ -47,28 +45,18 @@ const Users = () => {
         return (
             <main className='user-list'>
                 <h1 className='center-text m-heading'>{isCurrent ? "User Details" : "All Users"}</h1>
-                    {isCurrent && users ? <UserDetails 
-                    current={current}
-                    setCurrent={setCurrent}
-                    isCurrent={isCurrent}
-                    setIsCurrent={setIsCurrent}
-                    isLoading={isLoading}
-                /> 
-                : users.map((person => {
-                    const { id, name, first_name, email } = person;
-                    return <UserItem 
-                    key={id} 
-                    id={id} 
-                    firstName={first_name}
-                    name={name} 
-                    email={email} 
-                    users={users} 
-                    addresses={addresses} 
-                    setCurrent={setCurrent}
-                    handleDetailBtn={handleDetailBtn}
-                    isLoading={isLoading}
-                    /> 
-                }))}
+                    {isCurrent ? <UserDetails current={current} setCurrent={setCurrent} setIsCurrent={setIsCurrent} /> 
+                    : users.map((person => {
+                        const { id, name, first_name, email } = person;
+                        return <UserItem 
+                        key={id} 
+                        id={id} 
+                        firstName={first_name}
+                        name={name} 
+                        email={email} 
+                        handleDetailBtn={handleDetailBtn}
+                        /> 
+                    }))}
             </main>
         )
     }
